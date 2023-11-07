@@ -86,3 +86,10 @@ def compare():
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
     return render_template('compare.html', posts=posts)
+
+@app.route('/sync', methods=('GET', 'POST',))
+def sync():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    return render_template('sync.html', posts=posts)

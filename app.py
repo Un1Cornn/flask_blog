@@ -81,8 +81,8 @@ def delete(id):
     return redirect(url_for('index'))
 
 @app.route('/compare', methods=('GET', 'POST',))
-def index():
+def compare():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
-    return render_template('index.html', posts=posts)
+    return render_template('compare.html', posts=posts)

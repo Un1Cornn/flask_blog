@@ -31,7 +31,7 @@ def post(post_id):
     post = get_post(post_id)
     return render_template('post.html', post=post)
 
-@app.route('/create', methods=('GET', 'POST'))
+@app.route('/sync', methods=('GET', 'POST'))
 def create():
     if request.method == 'POST':
         title = request.form['title']
@@ -47,7 +47,7 @@ def create():
             conn.close()
             return redirect(url_for('index'))
 
-    return render_template('create.html')
+    return render_template('sync.html')
 
 @app.route('/<int:id>/edit', methods=('GET', 'POST'))
 def edit(id):

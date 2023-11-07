@@ -79,3 +79,10 @@ def delete(id):
     conn.close()
     flash('"{}" was successfully deleted!'.format(post['title']))
     return redirect(url_for('index'))
+
+@app.route('/compare', methods=('GET', 'POST',))
+def index():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    return render_template('index.html', posts=posts)

@@ -31,7 +31,7 @@ def post(post_id):
     post = get_post(post_id)
     return render_template('post.html', post=post)
 
-@app.route('/sync', methods=('GET', 'POST'))
+@app.route('/create', methods=('GET', 'POST'))
 def create():
     if request.method == 'POST':
         title = request.form['title']
@@ -47,7 +47,7 @@ def create():
             conn.close()
             return redirect(url_for('index'))
 
-    return render_template('sync.html')
+    return render_template('create.html')
 
 @app.route('/<int:id>/edit', methods=('GET', 'POST'))
 def edit(id):
@@ -86,3 +86,10 @@ def compare():
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
     return render_template('compare.html', posts=posts)
+
+@app.route('/sync', methods=('GET', 'POST',))
+def compare():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    return render_template('sync.html', posts=posts)

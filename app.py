@@ -93,3 +93,10 @@ def sync():
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
     return render_template('sync.html', posts=posts)
+
+@app.route('/login', methods=('GET', 'POST',))
+def login():
+    conn = get_db_connection()
+    posts = conn.execute('SELECT * FROM posts').fetchall()
+    conn.close()
+    return render_template('login.html', posts=posts)

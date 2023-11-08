@@ -5,7 +5,7 @@
   
   .topnav a {
     float: left;
-    display: block;
+    display: flex;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
@@ -30,7 +30,7 @@
   @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
-      float: left;
+      float: right;
       display: block;
     }
   }

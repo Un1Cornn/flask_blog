@@ -4,16 +4,19 @@
     <h1>{% block title %} Compare tenants {% endblock %}</h1>
     {% for post in posts %}
 
-    <div class="container" style="background-color: #ffffff;">
-        <div class="row">
-          <div class="col-sm">
-            Name
-          </div>
-          <div class="col-sm">
-            Location
-          </div>
-        </div>
-      </div>
-        <hr>
+        <script>
+            function callPythonFunction() {
+                fetch('/fetch_graph_data', { method: 'POST' })  // Sending a POST request to the backend route
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data); // Log the response from the backend
+                        // You can handle the response here if needed
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        </script>
+
+        <button onclick="callPythonFunction()">Call Python Function</button>
+    
     {% endfor %}
 {% endblock %}

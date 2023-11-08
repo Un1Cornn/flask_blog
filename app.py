@@ -100,3 +100,12 @@ def login():
     posts = conn.execute('SELECT * FROM posts').fetchall()
     conn.close()
     return render_template('login.html', posts=posts)
+
+@app.route('/fetch_graph_data', methods=['GET', 'POST'])
+def fetch_graph_data():
+    # Your Python function to be executed when the button is clicked
+    # This function will be triggered by the button click
+    # Insert the code you want to run here
+    # For example:
+    print("Button clicked and Python function executed")
+    return "Function executed"  # Sending a response back to the frontend

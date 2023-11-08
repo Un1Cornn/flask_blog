@@ -16,16 +16,16 @@
   </head>
   <body>
     <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a class="navbar-brand" href="{{ url_for('index')}}">Vireonsky</a>
+        <a href="{{ url_for('index')}}" class="active">Home</a>
+        <a href="{{url_for('compare')}}">Compare</a>
+        <a href="{{url_for('sync')}}">Sync</a>
+        <a href="{{url_for('login')}}">Login</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>
         </a>
       </div>
 
-   
     <div class="container">
     {% for message in get_flashed_messages() %}
         <div class="alert alert-danger">{{ message }}</div>

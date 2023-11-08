@@ -13,10 +13,5 @@ body {
 
   a
   {
-      color: #ffffff;
-  }
-
-  .a a:hover {
-    background-color: #ddd;
-    color: black;
+    color: #f2f2f2;
   }

@@ -4,19 +4,21 @@
     <h1>{% block title %} Compare tenants {% endblock %}</h1>
     {% for post in posts %}
 
-        <script>
-            function callPythonFunction() {
-                fetch('/fetch_graph_data', { method: 'POST' })  // Sending a POST request to the backend route
-                    .then(response => response.text())
-                    .then(data => {
-                        console.log(data); // Log the response from the backend
-                        // You can handle the response here if needed
-                    })
-                    .catch(error => console.error('Error:', error));
-            }
-        </script>
+    <script>
+      function callPythonFunction() {
+          fetch('/perform_action', { method: 'POST' })
+              .then(response => response.text())
+              .then(data => {
+                  // Display the response in the HTML
+                  document.getElementById('output').innerText = data;
+              })
+              .catch(error => console.error('Error:', error));
+      }
+  </script>
+
 
         <button onclick="callPythonFunction()">Call Python Function</button>
+        <div id="output"></div>
     
     {% endfor %}
 {% endblock %}

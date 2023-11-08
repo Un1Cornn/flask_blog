@@ -10,3 +10,12 @@ body {
 output{
     color:rgb(255, 255, 255)
 }
+
+.login-container {
+    float: right;
+}
+
+.login-container {
+    float: none;
+    text-align: right;
+}

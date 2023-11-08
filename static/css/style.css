@@ -7,16 +7,6 @@ body {
     background-color: #2a2b2e;
 }
 
-output{
-    color:rgb(255, 255, 255)
-}
-
-.topnav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .navbar-item {
-    margin-right: auto;
+.login-item {
+    margin-left: auto;
   }

@@ -1,6 +1,7 @@
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.exceptions import abort
+from fetch_github_data import fetch_graph_data   # Import the function
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
@@ -102,6 +103,6 @@ def login():
     return render_template('login.html', posts=posts)
 
 @app.route('/fetch_graph_data', methods=['POST'])
-def fetch_data():
+def fetch_graph_data():
     data = fetch_github_data()  # Call the function from the other file
     return data  # Return the fetched data as a response

@@ -1,7 +1,7 @@
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.exceptions import abort
-from github_data_fetch import fetch_github_data  # Import the function
+from fetch_github_data import fetch_github_data   # Import the function
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')

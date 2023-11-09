@@ -104,5 +104,5 @@ def login():
 
 @app.route('/fetch_graph_data', methods=['POST'])
 def fetch_graph_data():
-    data = fetch_github_data()  # Call the function from the other file
+    data = fetch_graph_data()  # Call the function from the other file
     return data  # Return the fetched data as a response

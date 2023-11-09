@@ -1,7 +1,6 @@
 import sqlite3
 from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.exceptions import abort
-import fetch_github_data   # Import the function
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
@@ -102,7 +101,11 @@ def login():
     conn.close()
     return render_template('login.html', posts=posts)
 
-@app.route('/fetch_graph_data', methods=['POST'])
+@app.route('/fetch_graph_data', methods=['GET', 'POST'])
 def fetch_graph_data():
-    data = fetch_graph_data()  # Call the function from the other file
-    return data  # Return the fetched data as a response
+    # Your Python function to be executed when the button is clicked
+    # This function will be triggered by the button click
+    # Insert the code you want to run here
+    # For example:
+    print("Button clicked and Python function executed")
+    return "Function executed"  # Sending a response back to the frontend

@@ -4,17 +4,17 @@
     <h1>{% block title %} Compare tenants {% endblock %}</h1>
     {% for post in posts %}
 
-<script>
-  function callPythonFunction() {
-      fetch('/fetch_graph_data', { method: 'POST' })
-          .then(response => response.json())  // Parse the response as JSON
-          .then(data => {
-              // Display the response in the HTML
-              document.getElementById('output').innerText = JSON.stringify(data, null, 2);
-          })
-          .catch(error => console.error('Error:', error));
-  }
-</script>
+    <script>
+      function callPythonFunction() {
+          fetch('/fetch_graph_data', { method: 'POST' })
+              .then(response => response.text())
+              .then(data => {
+                  // Display the response in the HTML
+                  document.getElementById('output').innerText = data;
+              })
+              .catch(error => console.error('Error:', error));
+      }
+  </script>
 
         <button onclick="callPythonFunction()">Call Python Function</button>
         <h1>   <div id="output">

@@ -2,7 +2,7 @@
   {
     "id": "0",
     "settingInstance": {
-      "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance",
+      "@odata.type": "#DITISEENDIKKETEEEEEEEEEEEEEEEEEESTGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
       "settingDefinitionId": "device_vendor_msft_policy_config_onedrivengscv4~policy~onedrivengsc_kfmforcewindowsdisplaylanguage",
       "settingInstanceTemplateReference": null,
       "choiceSettingValue": "@{settingValueTemplateReference=; value=device_vendor_msft_policy_config_onedrivengscv4~policy~onedrivengsc_kfmforcewindowsdisplaylanguage_0; children=System.Object[]}"
